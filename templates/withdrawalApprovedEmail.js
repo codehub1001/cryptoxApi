@@ -10,7 +10,7 @@ module.exports = function withdrawalApprovedEmail({ name, amount, coin, date }) 
       </ul>
       <p>The funds will be processed shortly. Thank you for using <strong>CryptoVault</strong>.</p>
       <br/>
-      <p>Regards,<br/><strong>CryptoVault Team</strong></p>
+      <p>Regards,<br/><strong>zentraVault Team</strong></p>
     </div>
   `;
 };

@@ -12,6 +12,6 @@ module.exports.withdrawalRequestEmail = ({ name, amount, coin, destinationWallet
 
     <p>You will receive a confirmation email once your withdrawal is processed.</p>
     <br/>
-    <p>Thank you for using <strong>CryptoVault</strong>!</p>
+    <p>Thank you for using <strong>zentraVault</strong>!</p>
   </div>
 `;

@@ -7,11 +7,11 @@ module.exports = function withdrawalDisapprovedEmail({ name, amount, coin, date,
       <ul>
         <li><strong>Amount:</strong> ${amount}Usd</li>
         <li><strong>Date:</strong> ${date}</li>
-        <li><strong>Reason:</strong> ${reason}</li>
+        // <li><strong>Reason:</strong> ${reason}</li>
       </ul>
       <p>If you believe this was a mistake or need help, please contact support.</p>
       <br/>
-      <p>Regards,<br/><strong>CryptoVault Team</strong></p>
+      <p>Regards,<br/><strong>zentraVault Team</strong></p>
     </div>
   `;
 };

@@ -12,7 +12,7 @@ const welcomeEmail = ({ name, referralCode }) => `
     <p style="margin-top: 20px;">You can now start exploring and investing securely.</p>
 
     <hr style="margin: 30px 0;" />
-    <p style="font-size: 12px; color: #999;">If you did not register for CryptoVault, please ignore this email.</p>
+    <p style="font-size: 12px; color: #999;">If you did not register for zentraVault, please ignore this email.</p>
   </div>
 `;
 

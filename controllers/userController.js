@@ -72,7 +72,7 @@ exports.registerUser = async (req, res) => {
     // ✅ Send Welcome Email
     await sendMail({
       to: newUser.email,
-      subject: 'Welcome to CryptoVault 🎉',
+      subject: 'Welcome to zentravault 🎉',
       html:  welcomeEmail({ name: newUser.name, referralCode: newUser.referralCode }),
     });
 

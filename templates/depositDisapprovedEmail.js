@@ -7,7 +7,7 @@ function depositDisapprovedEmail({ name, amount, coin, date, reason }) {
       <p>❌ Unfortunately, your <strong>${coin}</strong> deposit of <strong>$${amount}</strong> was disapproved on ${date}.</p>
       <p>Please review your deposit details or contact support for assistance.</p>
       <br/>
-      <p>— The CryptoVault Team</p>
+      <p>— The zentraVault Team</p>
     </div>
   `;
 }

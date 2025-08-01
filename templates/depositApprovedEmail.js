@@ -6,7 +6,7 @@ const depositApprovedEmail = ({ name, amount, coin }) => `
 
     <p>You can now start investing or withdrawing anytime.</p>
 
-    <p style="margin-top: 20px;">Thank you for trusting <strong>CryptoVault</strong>.</p>
+    <p style="margin-top: 20px;">Thank you for trusting <strong>zentraVault</strong>.</p>
 
     <hr style="margin: 30px 0;" />
     <p style="font-size: 12px; color: #999;">For any questions, please contact our support.</p>
