@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed:plans": "node prisma/seed/investmentPlanSeeder.js"
+    "seed:plans": "node prisma/seed/investmentPlanSeeder.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "@prisma/client": "^6.13.0",
