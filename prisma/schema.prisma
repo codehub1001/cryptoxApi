@@ -1,0 +1,102 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String         @id @default(cuid())
+  name         String
+  email        String         @unique
+  password     String
+  dob          DateTime
+  country      String
+  nationality  String
+  referralCode String         @unique
+  referredBy   User?          @relation("Referrer", fields: [referredById], references: [id])
+  referredById String?
+  referrals    User[]         @relation("Referrer")
+  bonus        Float          @default(0)
+  createdAt    DateTime       @default(now())
+   role         Role           @default(USER)
+
+  wallet       Wallet?        @relation("UserWallet")
+  transactions Transaction[]
+  investments Investment[] 
+ resetToken        String?    // optional (nullable)
+  resetTokenExpires DateTime? // optional (nullable)
+  // ... other fields
+}
+
+model Wallet {
+  id           String         @id @default(uuid())
+  userId       String         @unique
+  balance      Float          @default(0.0)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+   frozen    Boolean  @default(false)
+
+  user         User           @relation("UserWallet", fields: [userId], references: [id])
+
+}
+enum Role {
+  USER
+  ADMIN
+}
+model Transaction {
+  id          String             @id @default(uuid())
+  userId      String
+  amount      Float
+  type        TransactionType
+  status      TransactionStatus @default(PENDING)
+  description String?
+  createdAt   DateTime          @default(now())
+  approvedBy  String?           // Admin who approved
+  approvedAt  DateTime?
+
+  user        User              @relation(fields: [userId], references: [id])
+}
+
+
+enum TransactionType {
+  DEPOSIT
+  WITHDRAW
+  DEBIT
+  BONUS
+}
+
+enum TransactionStatus {
+  PENDING
+  SUCCESS
+  FAILED
+}
+model InvestmentPlan {
+  id          String    @id @default(cuid())
+  name        String   @unique  
+  minAmount   Float
+  maxAmount   Float?   // nullable for no max limit
+  dailyReturn Float   // decimal like 0.10 = 10%
+  duration    Int     // in days
+  perks       String   // JSON string or comma-separated
+  createdAt   DateTime @default(now())
+  investments Investment[] 
+}
+
+model Investment {
+  id             String      @id @default(cuid())
+  userId         String
+  planId         String
+  amount         Float
+  startDate      DateTime    @default(now())
+  endDate        DateTime
+  status         String      @default("ACTIVE") // ACTIVE, COMPLETED, CANCELLED, etc.
+  expectedReturn Float   
+
+  user           User        @relation(fields: [userId], references: [id]) 
+  plan           InvestmentPlan @relation(fields: [planId], references: [id])
+
+  createdAt      DateTime    @default(now())
+}
