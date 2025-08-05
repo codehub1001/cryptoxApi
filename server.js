@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors({
   origin: [
     "http://localhost:5173",                      // For local development
-    "https://zentra-nu-woad.vercel.app"           // Vercel frontend
+    "https://zentra-nu-woad.vercel.app",          // Vercel frontend
     "http://zentravault.us/"           // Vercel frontend
   ],
   credentials: true,
