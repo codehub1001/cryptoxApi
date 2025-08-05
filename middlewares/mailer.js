@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
 const sendMail = async ({ to, subject, html }) => {
   try {
     const mailOptions = {
-      from: `"ZentraVault" <no-reply@zentravault.com>`,
+      from: `"ZentraVault" <${process.env.EMAIL_USER}>`,
       to,
       subject,
       html,
