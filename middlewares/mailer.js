@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
 const sendMail = async ({ to, subject, html }) => {
   try {
     const mailOptions = {
-      from: `"CryptoVault" <${process.env.EMAIL_USER}>`,
+      from: `"ZentraVault" <${process.env.EMAIL_USER}>`,
       to,
       subject,
       html,

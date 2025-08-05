@@ -8,7 +8,7 @@ module.exports = function withdrawalApprovedEmail({ name, amount, coin, date }) 
         <li><strong>Amount:</strong> ${amount}usd</li>
         <li><strong>Date:</strong> ${date}</li>
       </ul>
-      <p>The funds will be processed shortly. Thank you for using <strong>CryptoVault</strong>.</p>
+      <p>The funds will be processed shortly. Thank you for using <strong>zentraVault</strong>.</p>
       <br/>
       <p>Regards,<br/><strong>zentraVault Team</strong></p>
     </div>
